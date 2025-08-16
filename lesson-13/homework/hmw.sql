@@ -1,0 +1,23 @@
+Easy tasks
+1 Select concat('100','-','Steven',' ','King')
+2 Select replace(PHONE_NUMBER,'124','999')
+    from Employees
+3 
+4 select MANAGER_ID,
+    Sum(SALARY) as Total_salary
+    from Employees
+  Group by MANAGER_ID
+5 select Year1,
+    greatest(Max1,Max2,Max3)
+    from TestMax
+6 select*from cinema
+    where rating>'6.2'
+    and id not like '4'
+7 select*from SingleOrder
+    order by
+    case when id=0 then 1 else 0 end; 
+8
+
+
+Medium Tasks
+1 
