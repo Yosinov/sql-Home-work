@@ -31,4 +31,25 @@ Easy tasks
 
     
 Medium Tasks
-1 
+1 SELECT 
+  StudentID,
+  Grade,
+  -- Имя (первое слово)
+  LEFT(FullName, CHARINDEX(' ', FullName) - 1) AS FirstName,
+
+  -- Отчество (второе слово)
+  SUBSTRING(
+    FullName,
+    CHARINDEX(' ', FullName) + 1,
+    CHARINDEX(' ', FullName, CHARINDEX(' ', FullName) + 1) - CHARINDEX(' ', FullName) - 1
+  ) AS MiddleName,
+
+  -- Фамилия (оставшееся после второго пробела)
+  RIGHT(
+    FullName,
+    LEN(FullName) - CHARINDEX(' ', FullName, CHARINDEX(' ', FullName) + 1)
+  ) AS LastName
+
+FROM Students;
+
+2 
